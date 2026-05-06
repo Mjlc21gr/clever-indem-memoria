@@ -96,12 +96,64 @@ clever-indem/
 4. **Módulos** (`modulos/`): cada dev actualiza el historial del módulo en el que trabajó.
 5. **Commits**: un commit por sesión con formato `"sesión YYYY-MM-DD — [rol] — resumen"`.
 
-## Cómo retomar contexto (prompt estándar)
+## Cómo retomar contexto — Prompts por rol
 
+### Auditor (coordinador)
 ```
 Lee estos archivos para retomar el contexto completo:
-- estado-actual.md
-- tareas.md
-- decisiones.md
-- back/ticket-actual.md (o front/ticket-actual.md)
+- ~/.kiro/steering/clever-indem/estado-actual.md
+- ~/.kiro/steering/clever-indem/tareas.md
+- ~/.kiro/steering/clever-indem/decisiones.md
+- ~/.kiro/steering/clever-indem/back/ticket-actual.md
+- ~/.kiro/steering/clever-indem/front/ticket-actual.md
+
+Cuando tengas todo el contexto dime dónde quedamos y qué sigue.
+```
+
+### Back (desarrollador backend)
+```
+Eres el desarrollador back del proyecto clever-indem.
+Lee ~/.kiro/steering/clever-indem/back/ticket-actual.md y ejecuta todo lo que dice.
+Al terminar, actualiza ~/.kiro/steering/clever-indem/resultados/ con un archivo YYYY-MM-DD-back-descripcion.md describiendo todo lo que hiciste.
+Luego responde: "Listo. Puedes pedirle al auditor que verifique."
+```
+
+**Inicio de sesión back (primera vez o retomar):**
+```
+Eres el desarrollador back del proyecto clever-indem.
+Lee ~/.kiro/steering/clever-indem/back/ para entender la arquitectura.
+Luego lee la estructura del repo en /Users/luiscarlosgomez/GitHub/Clever Indem/clever-siniestros-ms
+Rama de trabajo: feature/autorizante
+Cuando tengas el contexto completo confirma que estás listo.
+```
+
+**Comandos del back:**
+```bash
+cd "/Users/luiscarlosgomez/GitHub/Clever Indem/clever-siniestros-ms"
+git checkout feature/autorizante
+./gradlew bootRun
+```
+
+### Front (desarrollador frontend)
+```
+Eres el desarrollador front del proyecto clever-indem.
+Lee ~/.kiro/steering/clever-indem/front/ticket-actual.md y ejecuta todo lo que dice.
+Al terminar, actualiza ~/.kiro/steering/clever-indem/resultados/ con un archivo YYYY-MM-DD-front-descripcion.md describiendo todo lo que hiciste.
+Luego responde: "Listo. Puedes pedirle al auditor que verifique."
+```
+
+**Inicio de sesión front (primera vez o retomar):**
+```
+Eres el desarrollador front del proyecto clever-indem.
+Lee ~/.kiro/steering/clever-indem/front/ para entender la arquitectura.
+Luego lee la estructura del repo en /Users/luiscarlosgomez/GitHub/Clever Indem/clever-frontend
+Rama de trabajo: feature/front-servicios
+Cuando tengas el contexto completo confirma que estás listo.
+```
+
+**Comandos del front:**
+```bash
+cd "/Users/luiscarlosgomez/GitHub/Clever Indem/clever-frontend"
+git checkout feature/front-servicios
+npm start
 ```
